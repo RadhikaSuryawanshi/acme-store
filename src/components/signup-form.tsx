@@ -74,7 +74,7 @@ export function SignupForm({
           <Input
             id="name"
             type="text"
-            placeholder="John Doe"
+            placeholder="Enter your username"
             {...register("username")}
           />
           {errors.username && (
@@ -89,7 +89,7 @@ export function SignupForm({
           <Input
             id="email"
             type="email"
-            placeholder="m@example.com"
+            placeholder="Enter your email"
             {...register("email")}
           />
           {errors.email && (

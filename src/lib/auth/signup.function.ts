@@ -1,4 +1,7 @@
 "use client";
+
+import { SignupData } from "../data";
+
 export async function signup(data: SignupData) {
   const res = await fetch("https://fakestoreapi.com/users", {
     method: "POST",

@@ -76,7 +76,7 @@ export function LoginForm({
           <Input
             id="username"
             type="username"
-            placeholder="m@example.com"
+            placeholder="Enter your username"
             {...register("username")}
           />
           {errors.username && (

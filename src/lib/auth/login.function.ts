@@ -1,5 +1,7 @@
 "use client";
 
+import { LoginData } from "../data";
+
 export async function login(data: LoginData) {
   const res = await fetch("https://fakestoreapi.com/auth/login", {
     method: "POST",
