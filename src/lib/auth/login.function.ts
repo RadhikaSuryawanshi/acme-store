@@ -20,5 +20,6 @@ export async function login(data: LoginData) {
     // console.error("Login failed:", text);
     throw new Error(text || "Invalid username or password");
   }
+
   return res.json();
 }

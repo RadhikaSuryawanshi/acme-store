@@ -5,15 +5,17 @@ import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { ProductData } from "@/lib/data";
 import { useProducts } from "@/lib/Products/products.hook";
+import { slugify } from "@/lib/slug";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 
-export default function ProductPage() {
-  const pathname = usePathname();
+export default function Shirts() {
   const { data, isLoading } = useProducts();
+  const pathname = usePathname();
   const [sortBy, setSortBy] = useState("relevance");
   const router = useRouter();
+
   if (isLoading)
     return (
       <div className="w-[98%] h-full flex justify-between">
@@ -27,7 +29,12 @@ export default function ProductPage() {
       </div>
     );
 
-  const sortedProducts = [...data].sort((a: any, b: any) => {
+  const Shirts = data.filter(
+    (product: any) =>
+      product.category === "men's clothing" ||
+      product.category === "women's clothing",
+  );
+  const sortedProducts = [...Shirts].sort((a: any, b: any) => {
     switch (sortBy) {
       case "trending":
         return b.rating?.count - a.rating?.count;
@@ -47,17 +54,20 @@ export default function ProductPage() {
   const handleSort = (value: string) => {
     setSortBy(value);
     if (value === "relevance") {
-      router.push("/search");
+      router.push("/search/shirts");
     } else {
-      router.push(`/search?sort=${value}`);
+      router.push(`/search/shirts?sort=${value}`);
     }
   };
 
   return (
-    <main className="w-full gap-3 flex">
+    <div className="w-full gap-3 flex">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-[90%] ">
-        {sortedProducts.map((product: ProductData) => (
-          <Link href={"/product/" + product.id} key={product.id}>
+        {sortedProducts.map((product: any) => (
+          <Link
+            href={`/product/${slugify(product.title)}-${product.id}`}
+            key={product.id}
+          >
             <CardContainer className="w-[90%]  rounded-xl hover:border hover:border-blue-700">
               <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto   rounded-xl p-6 border  ">
                 <CardItem translateZ="100" className="w-full">
@@ -165,6 +175,6 @@ export default function ProductPage() {
           </ul>
         </nav>
       </section>
-    </main>
+    </div>
   );
 }

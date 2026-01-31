@@ -44,10 +44,9 @@ export function LoginForm({
   const onSubmit = async (data: LoginFormData) => {
     try {
       const res = await login(data);
-      if (res) {
-        // toast.success("Logged in successfully",{ position: "top-left" });
-        router.push("/dashboard");
-      }
+
+      // toast.success("Logged in successfully",{ position: "top-left" });
+      router.push("/dashboard");
     } catch (err: any) {
       // console.l)og("Login error:", err);
       toast.error(err.message, {

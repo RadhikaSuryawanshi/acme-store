@@ -18,3 +18,5 @@ export type ProductData = {
   category: "string";
   image: "https://example.com/";
 };
+
+// export type Category= |

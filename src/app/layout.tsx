@@ -10,6 +10,7 @@ import {
   InputGroupAddon,
   InputGroupInput,
 } from "@/components/ui/input-group";
+import ReduxProvider from "@/lib/Provider/ReduxProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,99 +37,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <QueryProvider>
-          <div className="w-full h-screen bg-gray-50">
-            <nav className="w-full h-[12%] p-3  flex justify-between items-center">
-              <div className="w-[27%] h-full flex items-center gap-2 p-2">
-                <div className="w-[11%] h-[115%]  border border-neutral-300 bg-white rounded-md relative">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-label="Acme Store logo"
-                    viewBox="0 -20 32 77"
-                    className="h-full w-full absolute top-[1.3px] fill-black dark:fill-white h-[16px] w-[16px]"
-                  >
-                    <title>Acme Store logo</title>
-                    <path d="M21.5758 9.75769L16 0L0 28H11.6255L21.5758 9.75769Z"></path>
-                    <path d="M26.2381 17.9167L20.7382 28H32L26.2381 17.9167Z"></path>
-                  </svg>
-                </div>
-                <Link href={"/dashboard"}>
-                  <p className="text-[0.9rem] font-semibold">ACME STORE</p>
-                </Link>
-                <div className="w-[55%] h-full flex justify-around items-center  p-2 text-[0.9rem] text-neutral-500">
-                  <Link href={"/search"}>All</Link>
-                  <Link href={""}>Shirts</Link>
-                  <Link href={""}> Stickers</Link>
-                </div>
-              </div>
-              <div className="w-[35%] h-full mr-80 h-full  flex justify-center items-center">
-                <InputGroup className="w-[94%] h-[85%]">
-                  <InputGroupInput placeholder="Search for products..." />
-
-                  <InputGroupAddon align="inline-end">
-                    <Search />
-                  </InputGroupAddon>
-                </InputGroup>
-              </div>
-              <div className="w-[3.5%] h-full rounded-md border border-neutral-300 flex justify-center items-center  ">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="1.5"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                  data-slot="icon"
-                  className="h-4 transition-all ease-in-out hover:scale-110"
-                >
-                  {" "}
-                  <title>Cart</title>
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
-                  ></path>
-                </svg>
-              </div>
-            </nav>
-            <div className="w-full h-screen bg-gray-50">{children}</div>
-
-            <footer className="w-full h-[60%]  mt-6 bg-gray-50 flex justify-center items-end">
-              <div className="w-[98%] h-[85%] flex  ">
-                <div className="w-[15%] h-full   ">
-                  <div className="w-full h-[15%]  flex gap-1 items-center">
-                    <div className="w-[15%] h-[60%]  border border-neutral-300 bg-white rounded-md relative">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        aria-label="Acme Store logo"
-                        viewBox="0 -20 32 77"
-                        className="h-full w-full absolute top-[1.3px] fill-black dark:fill-white h-[16px] w-[16px]"
-                      >
-                        <title>Acme Store logo</title>
-                        <path d="M21.5758 9.75769L16 0L0 28H11.6255L21.5758 9.75769Z"></path>
-                        <path d="M26.2381 17.9167L20.7382 28H32L26.2381 17.9167Z"></path>
-                      </svg>
-                    </div>
-                    <Link href={"/dashboard"}>
-                      <p className="text-[0.9rem] font-semibold">ACME STORE</p>
-                    </Link>
-                  </div>
-                </div>
-                <div className="w-[70%] h-full ">
-                  <ul className="w-full text-[0.9rem] leading-10 mt-1">
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Terms & Conditions</li>
-                    <li>Shipping & Return Policy</li>
-                    <li>Privacy Policy</li>
-                    <li>FAQ</li>
-                  </ul>
-                </div>
-              </div>
-            </footer>
-          </div>
-          <Toaster duration={2000} />
-        </QueryProvider>
+        <ReduxProvider>
+          <QueryProvider>
+            {children}
+            <Toaster duration={2000} />
+          </QueryProvider>
+        </ReduxProvider>
       </body>
     </html>
   );

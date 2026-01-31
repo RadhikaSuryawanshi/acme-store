@@ -9,10 +9,3 @@ export function useProducts() {
     });
 }
 
-// export function useSingleProduct() {
-//     return useQuery({
-//         queryKey: ["single-product",4],
-//         queryFn: ()=> getSingleProduct(4),
-
-//     });
-// }

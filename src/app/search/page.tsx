@@ -3,7 +3,7 @@ import ProductPage from "@/Components/ProductPage";
 
 export default function SearchPage() {
     return (
-        <div className="w-full h-screen ">
+        <div className="w-full ">
     <ProductPage/>
         </div>
     )
