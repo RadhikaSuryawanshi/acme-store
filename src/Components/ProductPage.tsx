@@ -11,9 +11,11 @@ import { useState } from "react";
 
 export default function ProductPage() {
   const pathname = usePathname();
-  const { data, isLoading } = useProducts();
+  const { data, isLoading, error } = useProducts();
   const [sortBy, setSortBy] = useState("relevance");
-  
+  // console.log("Data", data);
+  // console.log("loading", isLoading);
+  // console.log("error", error);
   const router = useRouter();
   if (isLoading)
     return (
