@@ -27,9 +27,11 @@ export default function Jewelery() {
       </div>
     );
 
-  const Tops = data.filter((product: any) => product.category === "tops");
+  const Fragrances = data.filter(
+    (product: any) => product.category === "fragrances",
+  );
 
-  const sortedProducts = [...Tops].sort((a: any, b: any) => {
+  const sortedProducts = [...Fragrances].sort((a: any, b: any) => {
     switch (sortBy) {
       case "trending":
         return b.rating?.count - a.rating?.count;
@@ -49,9 +51,9 @@ export default function Jewelery() {
   const handleSort = (value: string) => {
     setSortBy(value);
     if (value === "relevance") {
-      router.push("/search/tops");
+      router.push("/search/fragrances");
     } else {
-      router.push(`/search/tops?sort=${value}`);
+      router.push(`/search/fragrances?sort=${value}`);
     }
   };
 

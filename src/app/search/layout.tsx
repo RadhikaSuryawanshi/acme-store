@@ -45,20 +45,17 @@ export default function SearchLayout({
               </li>
               <li>
                 <Link
-                  href={"/search/tops"}
+                  href={"/search/fragrances"}
                   className={`${
-                    pathname === "/search/tops"
+                    pathname === "/search/fragrances"
                       ? "border-b border-black"
                       : "border-b border-transparent"
                   }`}
                 >
-                  Tops
+                  Fragrances
                 </Link>
               </li>
-              <li>Electronics</li>
-              <li>Footware</li>
-              <li>Headwear</li>
-              <li>Hoodies</li>
+
               <li>
                 <Link
                   href={"/search/beauty"}
@@ -71,8 +68,7 @@ export default function SearchLayout({
                   Beauty
                 </Link>
               </li>
-              <li>Kids</li>
-              <li>Pets</li>
+
               <li>
                 {" "}
                 <Link
@@ -86,7 +82,13 @@ export default function SearchLayout({
                   Furniture
                 </Link>
               </li>
+              <li>Electronics</li>
+              <li>Footware</li>
+              <li>Headwear</li>
+              <li>Hoodies</li>
               <li>Stickers</li>
+              <li>Kids</li>
+              <li>Pets</li>
             </ul>
           </nav>
         </section>
