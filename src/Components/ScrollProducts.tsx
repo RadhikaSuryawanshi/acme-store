@@ -33,7 +33,7 @@ export default function ScrollProducts() {
           >
             <div className="w-[450px] py-3 border rounded-md bg-white flex-shrink-0 relative group hover:border-blue-700 mb-4">
               <img
-                src={product.image}
+                src={product.thumbnail}
                 alt="product images"
                 className="h-35 mx-auto object-contain transition duration-300 ease-in-out group-hover:scale-105 "
               />
@@ -56,7 +56,7 @@ export default function ScrollProducts() {
           >
             <div className="w-[450px] py-3 border rounded-md bg-white flex-shrink-0 relative group hover:border-blue-700 mb-4">
               <img
-                src={product.image}
+                src={product.thumbnail}
                 alt="product images"
                 className="h-35 mx-auto object-contain transition duration-300 ease-in-out group-hover:scale-105 "
               />
@@ -79,7 +79,7 @@ export default function ScrollProducts() {
           >
             <div className="w-[450px] py-3 border rounded-md bg-white flex-shrink-0 relative group hover:border-blue-700 mb-4">
               <img
-                src={product.image}
+                src={product.thumbnail}
                 alt="product images"
                 className="h-35 mx-auto object-contain transition duration-300 ease-in-out group-hover:scale-105 "
               />

@@ -37,7 +37,7 @@ export default function DashboardPage() {
               <div className="w-full flex flex-col justify-center items-center h-[95%] rounded-lg border hover:border-blue-600 ">
                 <div className="relative group w-full flex justify-center items-center ">
                   <img
-                    src={product.image}
+                    src={product.thumbnail}
                     alt=""
                     className="w-[40%]  h-[60%] relative  transition duration-300 ease-in-out group-hover:scale-105"
                   />
@@ -64,7 +64,7 @@ export default function DashboardPage() {
               <div className=" w-full h-full   rounded-lg border hover:border-blue-600 ">
                 <div className="relative group w-full  h-full  flex justify-center items-center ">
                   <img
-                    src={product.image}
+                    src={product.thumbnail}
                     alt=""
                     className="w-[40%]  h-[60%] relative  transition duration-300 ease-in-out group-hover:scale-105"
                   />

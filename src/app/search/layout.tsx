@@ -32,23 +32,43 @@ export default function SearchLayout({
                 </Link>
               </li>
               <li>
-                <a href={"search"}>Bags</a>
+                <Link
+                  href={"/search/groceries"}
+                  className={`${
+                    pathname === "/search/groceries"
+                      ? "border-b border-black"
+                      : "border-b border-transparent"
+                  }`}
+                >
+                  Groceries
+                </Link>
               </li>
-              <li>Drinkware</li>
+              <li>
+                <Link
+                  href={"/search/tops"}
+                  className={`${
+                    pathname === "/search/tops"
+                      ? "border-b border-black"
+                      : "border-b border-transparent"
+                  }`}
+                >
+                  Tops
+                </Link>
+              </li>
               <li>Electronics</li>
               <li>Footware</li>
               <li>Headwear</li>
               <li>Hoodies</li>
               <li>
                 <Link
-                  href={"/search/jewelery"}
+                  href={"/search/beauty"}
                   className={`${
-                    pathname === "/search/jewelery"
+                    pathname === "/search/beauty"
                       ? "border-b border-black"
                       : "border-b border-transparent"
                   }`}
                 >
-                  Jewelery
+                  Beauty
                 </Link>
               </li>
               <li>Kids</li>
@@ -56,14 +76,14 @@ export default function SearchLayout({
               <li>
                 {" "}
                 <Link
-                  href={"search/shirts"}
+                  href={"search/furniture"}
                   className={` ${
-                    pathname === "/search/shirts"
+                    pathname === "/search/furniture"
                       ? "border-b border-black"
                       : "border-b border-transparent"
                   }`}
                 >
-                  Shirts
+                  Furniture
                 </Link>
               </li>
               <li>Stickers</li>
@@ -71,7 +91,6 @@ export default function SearchLayout({
           </nav>
         </section>
         <section className="w-[87%] ">{children}</section>
-        
       </main>
 
       <Footer />

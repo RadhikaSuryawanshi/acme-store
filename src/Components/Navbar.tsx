@@ -29,17 +29,17 @@ export default function Navbar() {
             All
           </Link>
           <Link
-            href={"/search/shirts"}
+            href={"/search/furniture"}
             className="hover:text-black hover:underline"
           >
-            Shirts
+            Furniture
           </Link>
           <Link
-            href={"/search/jewelery"}
+            href={"/search/beauty"}
             className="hover:text-black hover:underline"
           >
             {" "}
-            Jewelery
+            Beauty
           </Link>
         </div>
       </div>

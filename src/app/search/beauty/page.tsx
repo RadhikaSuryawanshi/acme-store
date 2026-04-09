@@ -1,16 +1,14 @@
 "use client";
-
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
-import { ProductData } from "@/lib/data";
 import { useProducts } from "@/lib/Products/products.hook";
 import { slugify } from "@/lib/slug";
 import Link from "next/link";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 
-export default function Shirts() {
+export default function Jewelery() {
   const { data, isLoading } = useProducts();
   const pathname = usePathname();
   const [sortBy, setSortBy] = useState("relevance");
@@ -29,15 +27,9 @@ export default function Shirts() {
       </div>
     );
 
-  if (!data) return <div>Loading...</div>;
+  const Beauty = data.filter((product: any) => product.category === "beauty");
 
-  const Shirts =
-    data.filter(
-      (product: any) =>
-        product.category === "men's clothing" ||
-        product.category === "women's clothing",
-    ) || [];
-  const sortedProducts = [...Shirts].sort((a: any, b: any) => {
+  const sortedProducts = [...Beauty].sort((a: any, b: any) => {
     switch (sortBy) {
       case "trending":
         return b.rating?.count - a.rating?.count;
@@ -57,15 +49,15 @@ export default function Shirts() {
   const handleSort = (value: string) => {
     setSortBy(value);
     if (value === "relevance") {
-      router.push("/search/shirts");
+      router.push("/search/beauty");
     } else {
-      router.push(`/search/shirts?sort=${value}`);
+      router.push(`/search/beauty?sort=${value}`);
     }
   };
 
   return (
-    <div className="w-full gap-3 flex">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-[90%] ">
+    <div className="w-full gap-3 flex ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-[90%]">
         {sortedProducts.map((product: any) => (
           <Link
             href={`/product/${slugify(product.title)}-${product.id}`}
@@ -75,7 +67,7 @@ export default function Shirts() {
               <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto   rounded-xl p-6 border  ">
                 <CardItem translateZ="100" className="w-full">
                   <img
-                    src={product.image}
+                    src={product.thumbnail}
                     height="1000"
                     width="1000"
                     className="relative h-60 w-full object-fill rounded-xl group-hover/card:shadow-xl"

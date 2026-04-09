@@ -9,9 +9,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+
 import { useAppDispatch, useAppSelector } from "@/lib/redux/store";
 import {
   decrementQuantity,
@@ -95,7 +93,7 @@ export default function CartSection() {
                 <div className="w-[60%] relative flex justify-between gap-1">
                   {" "}
                   <img
-                    src={item.image}
+                    src={item.thumbnail}  
                     alt="cartimage"
                     className="w-[35%] h-[90%] rounded-md bg-neutral-300 p-1"
                   />

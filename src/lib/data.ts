@@ -16,7 +16,7 @@ export type ProductData = {
   price: number;
   description: string;
   category: "string";
-  image: "https://example.com/";
+  thumbnail: "https://example.com/";
 };
 
 // export type Category= |

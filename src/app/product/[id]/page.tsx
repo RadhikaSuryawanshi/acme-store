@@ -19,9 +19,10 @@ export default function ProductPage() {
   const dispatch = useDispatch();
 
   if (isLoading) return <div>Loading...</div>;
+  console.log("data", data);
 
   const relatedProducts = products?.filter(
-    (item: any) => item.category === data.category && item.id !== data.id,
+    (item: any) => item.category === data?.category && item.id !== data?.id,
   );
 
   const handleAddtoCart = (product: Omit<CartItems, "quantity">) => {
@@ -37,7 +38,7 @@ export default function ProductPage() {
       >
         <section className="w-[72%] gap-10  flex flex-col justify-center items-center relative group/card">
           <img
-            src={data.image}
+            src={data.thumbnail}
             alt="product images"
             className="w-[45%] h-[55%] relative  transition duration-300 ease-in-out group-hover:scale-105"
           />
@@ -136,7 +137,7 @@ export default function ProductPage() {
             >
               <div className="w-[290px] py-7 border rounded-md p-4 bg-white flex-shrink-0 relative group hover:border-blue-700">
                 <img
-                  src={item.image}
+                  src={item.thumbnail}
                   alt="product images"
                   className="h-50 mx-auto object-contain transition duration-300 ease-in-out group-hover:scale-110 "
                 />
