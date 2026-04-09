@@ -29,11 +29,14 @@ export default function Shirts() {
       </div>
     );
 
-  const Shirts = data.filter(
-    (product: any) =>
-      product.category === "men's clothing" ||
-      product.category === "women's clothing",
-  );
+  if (!data) return <div>Loading...</div>;
+
+  const Shirts =
+    data.filter(
+      (product: any) =>
+        product.category === "men's clothing" ||
+        product.category === "women's clothing",
+    ) || [];
   const sortedProducts = [...Shirts].sort((a: any, b: any) => {
     switch (sortBy) {
       case "trending":

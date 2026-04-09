@@ -13,6 +13,7 @@ export default function ProductPage() {
   const pathname = usePathname();
   const { data, isLoading } = useProducts();
   const [sortBy, setSortBy] = useState("relevance");
+  
   const router = useRouter();
   if (isLoading)
     return (

@@ -32,7 +32,7 @@ export default function DashboardPage() {
     <div className="w-full min-h-screen flex flex-col  justify-center items-center">
       <div className="w-[97%] h-[50%]  flex  gap-5 rounded-md">
         <div className="w-[65%]   rounded-md ">
-          {data.slice(1, 2).map((product: ProductData) => (
+          {data?.slice(1, 2)?.map((product: ProductData) => (
             <Link href={`/product/${product.id}`} key={product.id}>
               <div className="w-full flex flex-col justify-center items-center h-[95%] rounded-lg border hover:border-blue-600 ">
                 <div className="relative group w-full flex justify-center items-center ">

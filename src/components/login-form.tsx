@@ -30,10 +30,6 @@ export function LoginForm({
 
   const loginform = useForm<LoginFormData>({
     resolver: zodResolver(loginSchema),
-    defaultValues: {
-      username: "",
-      password: "",
-    },
   });
   const {
     register,

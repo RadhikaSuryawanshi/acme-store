@@ -8,7 +8,7 @@ import { toast } from "sonner";
 export const useLogin = () => {
   return useMutation({
     mutationFn: login,
-    onSuccess: (data) => {
+    onSuccess: () => {
       // console.log("Login Success", data);
       toast.success("Logged in successfully",{ position: "top-left" });
     },
