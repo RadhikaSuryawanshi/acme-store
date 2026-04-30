@@ -29,7 +29,7 @@ export default function CartSection() {
       onOpenChange={(open) => dispatch(toggleCart(open))}
     >
       <SheetTrigger asChild>
-        <div className="w-[3.8%]  rounded-md border border-neutral-300 flex justify-center items-center  ">
+        <div className="w-[11%] lg:w-[3.8%]  rounded-md border border-neutral-300 flex justify-center items-center  ">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

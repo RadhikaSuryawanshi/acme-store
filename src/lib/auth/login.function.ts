@@ -3,15 +3,12 @@
 import type { LoginData } from "../data";
 
 export async function login(data: LoginData) {
-  const res = await fetch("https://fakestoreapi.com/auth/login", {
+  const res = await fetch("/api/login", {
     method: "POST",
-    body: JSON.stringify({
-      username: data.username,
-      password: data.password,
-    }),
     headers: {
       "Content-Type": "application/json",
     },
+    body: JSON.stringify(data),
   });
   // console.log( res);
 
@@ -23,3 +20,4 @@ export async function login(data: LoginData) {
 
   return res.json();
 }
+

@@ -82,13 +82,6 @@ export default function SearchLayout({
                   Furniture
                 </Link>
               </li>
-              <li>Electronics</li>
-              <li>Footware</li>
-              <li>Headwear</li>
-              <li>Hoodies</li>
-              <li>Stickers</li>
-              <li>Kids</li>
-              <li>Pets</li>
             </ul>
           </nav>
         </section>

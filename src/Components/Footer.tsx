@@ -6,8 +6,8 @@ export default function Footer() {
   const pathname = usePathname();
   return (
     <div>
-      <footer className="w-full flex border-t px-2 py-12  ">
-        <div className="w-[15%] flex gap-2  p-1">
+      <footer className="w-full flex gap-3 lg:gap-0 border-t px-2 py-12  ">
+        <div className="lg:w-[15%] flex gap-2  p-1">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             aria-label="Acme Store logo"
@@ -98,15 +98,15 @@ export default function Footer() {
           </ul>
         </div>
       </footer>
-      <footer className=" w-full flex justify-between px-4 py-6 border-t  ">
-        <div className="flex gap-3">
-          <p className="text-sm text-neutral-500">
+      <footer className=" w-full flex justify-between px-2 lg:px-4 py-4 lg:py-6 border-t  ">
+        <div className="flex gap-1 lg:gap-3">
+          <p className="text-xs lg:text-sm text-neutral-500">
             © 2023 Acme Store. All rights reserved.{" "}
           </p>{" "}
-          <p className="text-sm text-neutral-500">|</p>
-          <p className="text-[15.7px] text-neutral-500">View the source</p>
+          <p className="text-xs lg:text-sm text-neutral-500">|</p>
+          <p className="text-xs lg:text-[15.7px] text-neutral-500">View the source</p>
         </div>{" "}
-        <Link href={""} className="text-[0.9rem]">
+        <Link href={""} className="text-xs lg:text-[0.9rem]">
           Created by ▲ Vercel
         </Link>
       </footer>

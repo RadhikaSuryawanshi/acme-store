@@ -7,8 +7,8 @@ import CartSection from "./CartSection";
 
 export default function Navbar() {
   return (
-    <nav className="w-full  p-4   flex justify-between items-center">
-      <div className="w-[27%]  flex items-center gap-2 p-2">
+    <nav className="w-full p-2 lg:p-4 flex justify-between items-center">
+      <div className=" lg:w-[27%]  flex items-center gap-2 lg:p-2">
         <div className="w-[11%]   border border-neutral-300 bg-white rounded-md ">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -22,9 +22,9 @@ export default function Navbar() {
           </svg>
         </div>
         <Link href={"/dashboard"}>
-          <p className="text-[0.9rem] font-semibold">ACME STORE</p>
+          <p className="text-sm lg:text-[0.9rem] font-semibold">ACME STORE</p>
         </Link>
-        <div className="w-[55%]  flex justify-around items-center  p-2 text-[0.9rem] text-neutral-500">
+        <div className="hidden w-[55%]  lg:flex  justify-around items-center  p-2 text-[0.9rem] text-neutral-500">
           <Link href={"/search"} className="hover:text-black hover:underline">
             All
           </Link>

@@ -6,13 +6,15 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { ProductData } from "@/lib/data";
 import { useProducts } from "@/lib/Products/products.hook";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 
 export default function ProductPage() {
-  const pathname = usePathname();
-  const { data, isLoading, error } = useProducts();
+  const { data, isLoading } = useProducts();
   const [sortBy, setSortBy] = useState("relevance");
+  const searchParams = useSearchParams();
+
+  const query = searchParams.get("q") || "";
   // console.log("Data", data);
   // console.log("loading", isLoading);
   // console.log("error", error);
@@ -46,6 +48,9 @@ export default function ProductPage() {
         return 0;
     }
   });
+  const filteredProducts = sortedProducts.filter((product) =>
+    product.title.toLowerCase().includes(query.toLowerCase()),
+  );
 
   const handleSort = (value: string) => {
     setSortBy(value);
@@ -59,7 +64,7 @@ export default function ProductPage() {
   return (
     <main className="w-full gap-3 flex">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-[90%] ">
-        {sortedProducts.map((product: ProductData) => (
+        {filteredProducts.map((product: ProductData) => (
           <Link href={"/product/" + product.id} key={product.id}>
             <CardContainer className="w-[90%]  rounded-xl hover:border hover:border-blue-700">
               <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto   rounded-xl p-6 border  ">
@@ -96,7 +101,7 @@ export default function ProductPage() {
               <button
                 type="button"
                 onClick={() => handleSort("relevance")}
-                className={` text-left border-b 
+                className={` text-left border-b
       ${
         sortBy === "relevance"
           ? "border-b border-black"
@@ -110,7 +115,7 @@ export default function ProductPage() {
               <button
                 type="button"
                 onClick={() => handleSort("trending")}
-                className={` text-left border-b 
+                className={` text-left border-b
       ${
         sortBy === "trending"
           ? "border-b border-black"
@@ -125,7 +130,7 @@ export default function ProductPage() {
               <button
                 type="button"
                 onClick={() => handleSort("latest-desc")}
-                className={` text-left border-b 
+                className={` text-left border-b
       ${
         sortBy === "latest-desc"
           ? "border-b border-black"
@@ -140,7 +145,7 @@ export default function ProductPage() {
               <button
                 type="button"
                 onClick={() => handleSort("price-asc")}
-                className={` text-left border-b 
+                className={` text-left border-b
       ${
         sortBy === "price-asc"
           ? "border-b border-black"
@@ -155,7 +160,7 @@ export default function ProductPage() {
               <button
                 type="button"
                 onClick={() => handleSort("price-desc")}
-                className={` text-left border-b 
+                className={` text-left border-b
       ${
         sortBy === "price-desc"
           ? "border-b border-black"

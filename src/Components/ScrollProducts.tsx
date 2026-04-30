@@ -31,11 +31,11 @@ export default function ScrollProducts() {
             href={`/product/${slugify(product.title)}-${product.id}`}
             key={product.id}
           >
-            <div className="w-[450px] py-3 border rounded-md bg-white flex-shrink-0 relative group hover:border-blue-700 mb-4">
+            <div className="w-[250px] lg:w-[450px] py-3 border rounded-md bg-white flex-shrink-0 relative group hover:border-blue-700 mb-4">
               <img
                 src={product.thumbnail}
                 alt="product images"
-                className="h-35 mx-auto object-contain transition duration-300 ease-in-out group-hover:scale-105 "
+                className="h-28 lg:h-35 mx-auto object-contain transition duration-300 ease-in-out group-hover:scale-105 "
               />
 
               <div className="absolute bottom-3 left-8 w-[50%] h-[25%] flex  justify-around items-center rounded-full p-1 backdrop-blur-md border border-neutral-200">
@@ -54,11 +54,11 @@ export default function ScrollProducts() {
             href={`/product/${slugify(product.title)}-${product.id}`}
             key={product.id}
           >
-            <div className="w-[450px] py-3 border rounded-md bg-white flex-shrink-0 relative group hover:border-blue-700 mb-4">
+            <div className="w-[250px] lg:w-[450px] py-3 border rounded-md bg-white flex-shrink-0 relative group hover:border-blue-700 mb-4">
               <img
                 src={product.thumbnail}
                 alt="product images"
-                className="h-35 mx-auto object-contain transition duration-300 ease-in-out group-hover:scale-105 "
+                className="h-28 lg:h-35 mx-auto object-contain transition duration-300 ease-in-out group-hover:scale-105 "
               />
 
               <div className="absolute bottom-3 left-8 w-[50%] h-[25%] flex  justify-around items-center rounded-full p-1 backdrop-blur-md border border-neutral-200">
@@ -77,11 +77,11 @@ export default function ScrollProducts() {
             href={`/product/${slugify(product.title)}-${product.id}`}
             key={product.id}
           >
-            <div className="w-[450px] py-3 border rounded-md bg-white flex-shrink-0 relative group hover:border-blue-700 mb-4">
+            <div className="w-[250px] lg:w-[450px] py-3 border rounded-md bg-white flex-shrink-0 relative group hover:border-blue-700 mb-4">
               <img
                 src={product.thumbnail}
                 alt="product images"
-                className="h-35 mx-auto object-contain transition duration-300 ease-in-out group-hover:scale-105 "
+                className="h-28 lg:h-35 mx-auto object-contain transition duration-300 ease-in-out group-hover:scale-105 "
               />
 
               <div className="absolute bottom-3 left-8 w-[50%] h-[25%] flex  justify-around items-center rounded-full p-1 backdrop-blur-md border border-neutral-200">

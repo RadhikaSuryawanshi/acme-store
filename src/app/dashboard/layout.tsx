@@ -17,7 +17,7 @@ export default function DashboardLayout({
 }) {
   const pathname = usePathname();
   return (
-    <div className="w-full min-h-screen h-screen bg-gray-50 ">
+    <div className="w-full min-h-screen bg-gray-50 ">
       <Navbar />
       <div className="flex-1 bg-gray-50 ">{children}</div>
       <Footer />

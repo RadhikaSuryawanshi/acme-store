@@ -29,19 +29,19 @@ export default function DashboardPage() {
       </div>
     );
   return (
-    <div className="w-full min-h-screen flex flex-col  justify-center items-center">
-      <div className="w-[97%] h-[50%]  flex  gap-5 rounded-md">
+    <div className="w-full flex flex-col  justify-center items-center">
+      <div className="w-[97%]  flex  gap-5 rounded-md">
         <div className="w-[65%]   rounded-md ">
           {data?.slice(1, 2)?.map((product: ProductData) => (
             <Link href={`/product/${product.id}`} key={product.id}>
-              <div className="w-full flex flex-col justify-center items-center h-[95%] rounded-lg border hover:border-blue-600 ">
+              <div className="w-full flex flex-col justify-center items-center h-[100%] lg:h-[95%] rounded-lg border hover:border-blue-600 ">
                 <div className="relative group w-full flex justify-center items-center ">
                   <img
                     src={product.thumbnail}
                     alt=""
-                    className="w-[40%]  h-[60%] relative  transition duration-300 ease-in-out group-hover:scale-105"
+                    className="w-[100%] lg:w-[40%] h-[90%] lg:h-[60%] relative  transition duration-300 ease-in-out group-hover:scale-105"
                   />
-                  <div className="absolute top-14 left-17 w-[27%] h-[11%] flex gap-1 justify-around items-center rounded-full p-1 backdrop-blur-xs border border-neutral-200">
+                  <div className="absolute top-10 lg:top-14 left-13 lg:left-17 w-[27%] h-[11%] flex gap-1 justify-around items-center rounded-full p-1 backdrop-blur-xs border border-neutral-200">
                     <p className="text-[0.8rem] font-semibold line-clamp-1">
                       {product.title}
                     </p>
@@ -66,9 +66,9 @@ export default function DashboardPage() {
                   <img
                     src={product.thumbnail}
                     alt=""
-                    className="w-[40%]  h-[60%] relative  transition duration-300 ease-in-out group-hover:scale-105"
+                    className="w-[90%] lg:w-[40%] h-[70%] lg:h-[60%] relative  transition duration-300 ease-in-out group-hover:scale-105"
                   />
-                  <div className="absolute bottom-5 left-5 w-[50%] h-[20%] flex gap-1 justify-around items-center rounded-full p-1 backdrop-blur-xs border border-neutral-200">
+                  <div className="absolute bottom-0 lg:bottom-5 left-2 lg:left-5 w-[50%] h-[20%] flex gap-1 justify-around items-center rounded-full p-1 backdrop-blur-xs border border-neutral-200">
                     <p className="text-[0.8rem] font-semibold line-clamp-1">
                       {product.title}
                     </p>
