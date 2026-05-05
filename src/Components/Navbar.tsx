@@ -5,11 +5,22 @@ import Link from "next/link";
 import SearchBar from "./SearchBar";
 import CartSection from "./CartSection";
 
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Button } from "@/components/ui/button";
+import { Menu } from "lucide-react";
+
 export default function Navbar() {
   return (
     <nav className="w-full p-2 lg:p-4 flex justify-between items-center">
-      <div className=" lg:w-[27%]  flex items-center gap-2 lg:p-2">
-        <div className="w-[11%]   border border-neutral-300 bg-white rounded-md ">
+      <div className=" lg:w-[27%] flex items-center gap-2 lg:p-2">
+        <div className="hidden w-[11%] lg:block  border border-neutral-300 bg-white rounded-md ">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             aria-label="Acme Store logo"
@@ -22,9 +33,11 @@ export default function Navbar() {
           </svg>
         </div>
         <Link href={"/dashboard"}>
-          <p className="text-sm lg:text-[0.9rem] font-semibold">ACME STORE</p>
+          <p className="hidden lg:flex text-sm lg:text-[0.9rem] font-semibold">
+            ACME STORE
+          </p>
         </Link>
-        <div className="hidden w-[55%]  lg:flex  justify-around items-center  p-2 text-[0.9rem] text-neutral-500">
+        <div className="hidden w-[55%] lg:flex  justify-around items-center  p-2 text-[0.9rem] text-neutral-500">
           <Link href={"/search"} className="hover:text-black hover:underline">
             All
           </Link>
@@ -42,7 +55,53 @@ export default function Navbar() {
             Beauty
           </Link>
         </div>
+
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild className="lg:hidden">
+            <Button variant="outline">
+              <Menu />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent>
+            <DropdownMenuGroup>
+              <DropdownMenuItem>
+                <Link
+                  href={"/dashboard"}
+                  className="hover:text-black hover:underline"
+                >
+                  Home
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                {" "}
+                <Link
+                  href={"/search"}
+                  className="hover:text-black hover:underline"
+                >
+                  All
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Link
+                  href={"/search/furniture"}
+                  className="hover:text-black hover:underline"
+                >
+                  Furniture
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Link
+                  href={"/search/beauty"}
+                  className="hover:text-black hover:underline"
+                >
+                  Beauty
+                </Link>
+              </DropdownMenuItem>
+            </DropdownMenuGroup>
+          </DropdownMenuContent>
+        </DropdownMenu>
       </div>
+
       <SearchBar />
       <CartSection />
     </nav>

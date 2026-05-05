@@ -40,7 +40,7 @@ export const cartSlice = createSlice({
       state.totalQuantity += 1;
       state.totalPrice += product.price;
     },
-    toggleCart: (state, action) => {
+    toggleCart: (state, action: PayloadAction<boolean>) => {
       state.isCartOpen = action.payload;
     },
     incrementQuantity: (state, action: PayloadAction<number>) => {

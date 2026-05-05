@@ -2,7 +2,7 @@
 
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import { Button } from "@/components/ui/button";
-import { Skeleton } from "@/components/ui/skeleton";
+
 import { ProductData } from "@/lib/data";
 import { useProducts } from "@/lib/Products/products.hook";
 import Link from "next/link";
@@ -19,18 +19,18 @@ export default function ProductPage() {
   // console.log("loading", isLoading);
   // console.log("error", error);
   const router = useRouter();
-  if (isLoading)
-    return (
-      <div className="w-[98%] h-full flex justify-between">
-        <div className="w-full h-full ">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {Array.from({ length: 6 }, (_, i) => `skeleton-${i}`).map((key) => (
-              <Skeleton key={key} className="w-full h-[260px] rounded-xl" />
-            ))}
-          </div>
-        </div>
-      </div>
-    );
+  //if (isLoading)
+  // return (
+  // <div className="w-[98%] h-full flex justify-between">
+  //   <div className="w-full h-full ">
+  //     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+  //       {Array.from({ length: 6 }, (_, i) => `skeleton-${i}`).map((key) => (
+  //         <skeleton key={key} className="w-full h-[260px] rounded-xl" />
+  //       ))}
+  //     </div>
+  //   </div>
+  // </div>
+  //);
 
   const sortedProducts = [...data].sort((a: any, b: any) => {
     switch (sortBy) {
@@ -40,7 +40,6 @@ export default function ProductPage() {
         return b.id - a.id;
       case "price-asc":
         return a.price - b.price;
-
       case "price-desc":
         return b.price - a.price;
 

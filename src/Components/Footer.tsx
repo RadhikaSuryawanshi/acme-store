@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <div>
       <footer className="w-full flex gap-3 lg:gap-0 border-t px-2 py-12  ">
-        <div className="lg:w-[15%] flex gap-2  p-1">
+        <div className="lg:w-[15%] flex gap-2 p-0 lg:p-1">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             aria-label="Acme Store logo"
@@ -23,7 +23,7 @@ export default function Footer() {
           </Link>
         </div>
         <div className="w-[60%] ">
-          <ul className="w-full text-[0.9rem] text-neutral-500 leading-10">
+          <ul className="w-full text-[0.9rem] text-neutral-500 leading-7 lg:leading-10">
             <li>
               <Link
                 href={"/dashboard"}

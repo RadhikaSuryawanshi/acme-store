@@ -1,22 +1,16 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
 import QueryProvider from "@/lib/Provider/QueryProvider";
 import { Toaster } from "sonner";
-import Link from "next/link";
-import { Search } from "lucide-react";
-import {
-  InputGroup,
-  InputGroupAddon,
-  InputGroupInput,
-} from "@/components/ui/input-group";
+import "@/bones/registry";
+import "./globals.css";
 import ReduxProvider from "@/lib/Provider/ReduxProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
-
+  
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],

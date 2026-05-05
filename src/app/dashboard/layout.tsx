@@ -1,13 +1,8 @@
 "use client";
 import Footer from "@/Components/Footer";
 import Navbar from "@/Components/Navbar";
-import {
-  InputGroup,
-  InputGroupAddon,
-  InputGroupInput,
-} from "@/components/ui/input-group";
-import { Search } from "lucide-react";
-import Link from "next/link";
+
+
 import { usePathname } from "next/navigation";
 
 export default function DashboardLayout({
